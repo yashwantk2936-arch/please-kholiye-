@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Girlfriend's Day ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ffd6e8, #ffc0cb, #ffe4ef);
+            overflow-x: hidden;
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top left, #ffffff33 0%, transparent 30%),
+                        radial-gradient(circle at bottom right, #ff69b455 0%, transparent 35%);
+            z-index: -2;
+        }
+
+        .hearts {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 25px;
+            animation: float 10s linear infinite;
+            opacity: .7;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            20% { opacity: 1; }
+            100% { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+        }
+
+        header {
+            padding: 50px 20px 20px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 50px;
+            color: #fff;
+            text-shadow: 0 10px 20px rgba(0,0,0,.2);
+        }
+
+        header p {
+            margin-top: 15px;
+            font-size: 18px;
+        }
+
+        .photo {
+            width: 200px;
+            height: 200px;
+            margin: 30px auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 8px solid white;
+            box-shadow: 0 20px 40px rgba(0,0,0,.25);
+            transition: .5s;
+        }
+
+        .photo:hover {
+            transform: scale(1.05) rotate(-2deg);
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: auto;
+            padding-bottom: 60px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, .22);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 35px;
+            border-radius: 25px;
+            margin: 20px 0;
+            box-shadow: 0 15px 35px rgba(0,0,0,.15);
+            animation: fade .8s;
+            display: none;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.15);
+        }
+
+        .card.active {
+            display: block;
+        }
+
+        @keyframes fade {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: none; }
+        }
+
+        .level {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .card p {
+            font-size: 19px;
+            line-height: 1.8;
+        }
+
+        button, .btn-link {
+            display: inline-block;
+            text-decoration: none;
+            margin-top: 30px;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            background: #ff4d94;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: .3s;
+            box-shadow: 0 8px 20px rgba(255, 0, 100, .3);
+        }
+
+        button:hover, .btn-link:hover {
+            background: #ff1a75;
+            transform: translateY(-3px);
+        }
+
+        .final {
+            text-align: center;
+        }
+
+        .final h2 {
+            font-size: 42px;
+            font-family: 'Pacifico', cursive;
+            margin-bottom: 25px;
+        }
+
+        .yes {
+            background: #ff2e7d;
+        }
+
+        .no {
+            background: #888;
+            margin-left: 15px;
+            position: relative;
+            transition: left 0.2s ease, top 0.2s ease;
+        }
+
+        footer {
+            padding: 30px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
+            header h1 { font-size: 38px; }
+            header p { font-size: 16px; }
+            .photo { width: 170px; height: 170px; }
+            .card { padding: 25px; }
+            .card p { font-size: 16px; }
+            .level { font-size: 26px; }
+            .final h2 { font-size: 32px; }
+            button, .btn-link { width: 100%; margin-top: 20px; text-align: center; }
+            .no { margin-left: 0; margin-top: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hearts"></div>
+
+    <header>
+        <h1>Happy Girlfriend's Day ❤️</h1>
+        <p>For the most beautiful girl in my life 💕</p>
+        <div class="photo">
+            <img src="https://raw.githubusercontent.com/yashwantk2936-arch/netflix/main/everything/first%20meet/IMG_20260731_115428_913~2.jpg" alt="Our Special Memory">
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Level 1 -->
+        <div class="card active">
+            <div class="level">🌸 Level 1</div>
+            <p>Happy Girlfriend's Day, My Love ❤️<br><br>
+            Today isn't just another day... It's a reminder that I am incredibly lucky to have someone as wonderful, kind, and beautiful as you.
+            Thank you for filling my life with happiness.</p>
+            <button onclick="next()">Continue 💕</button>
+        </div>
+
+        <!-- Level 2 -->
+        <div class="card">
+            <div class="level">💗 Level 2</div>
+            <p>
+            I know I'm not perfect...<br>
+            Sometimes I make mistakes, sometimes I hurt you without realizing it.<br>
+            But believe me...<br>
+            I never wanted to be the reason behind your sadness.
+            </p>
+            <button onclick="next()">I Have More To Say 🌹</button>
+        </div>
+
+        <!-- Level 3 -->
+        <div class="card">
+            <div class="level">🥺 Level 3</div>
+            <p>
+            I'm really sorry...<br>
+            If I made you cry, ignored your feelings, or disappointed you.<br>
+            Every moment without your smile feels incomplete.
+            </p>
+            <button onclick="next()">Please Read More ❤️</button>
+        </div>
+
+        <!-- Level 4 -->
+        <div class="card">
+            <div class="level">💌 Level 4</div>
+            <p>
+            If I could rewind time, I'd fix every mistake.<br>
+            I'd hug you tighter, listen better, and love you even more than yesterday.
+            </p>
+            <button onclick="next()">Next 💖</button>
+        </div>
+
+        <!-- Level 5 -->
+        <div class="card">
+            <div class="level">🌷 Level 5</div>
+            <p>
+            You deserve someone who understands you, supports you, and protects your heart.<br>
+            Every single day, I'm trying to become that person.
+            </p>
+            <button onclick="next()">Almost There 🌸</button>
+        </div>
+
+        <!-- Level 6 -->
+        <div class="card">
+            <div class="level">💕 Level 6</div>
+            <p>
+            No matter how many fights we have...<br>
+            You're still my favorite notification, my safe place, my happiness, my forever.
+            </p>
+            <button onclick="next()">One Last Thing ❤️</button>
+        </div>
+
+        <!-- Level 7 -->
+        <div class="card">
+            <div class="level">💞 Level 7</div>
+            <p>
+            I don't want perfection...<br>
+            I only want YOU.<br>
+            Let's make more memories, laugh more, travel more, and love each other forever.<br>
+            Happy Girlfriend's Day ❤️
+            </p>
+            <button onclick="next()">Final Surprise 🎁</button>
+        </div>
+
+        <!-- Final Card -->
+        <div class="card final">
+            <h2>I Love You Forever ❤️</h2>
+            <p>
+            Will you forgive me and make this Girlfriend's Day special again?
+            🥺💖
+            </p>
+            <div style="margin-top:20px;">
+                <a href="https://yashwantk2936-arch.github.io/netflix/" class="btn-link yes">YES ❤️</a>
+                <button class="no" id="no" onclick="handleNoClick()">NO 😤</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        Made with ❤️ only for You 🌸
+    </footer>
+
+    <script>
+        // Multi-level Card Navigation
+        const cards = document.querySelectorAll(".card");
+        let current = 0;
+
+        function next() {
+            cards[current].classList.remove("active");
+            current++;
+            cards[current].classList.add("active");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        // Animated Background Floating Hearts
+        const hearts = document.querySelector(".hearts");
+        const heartIcons = ["💖", "💕", "💗", "🌸", "💝", "❤️"];
+
+        for (let i = 0; i < 45; i++) {
+            const h = document.createElement("div");
+            h.className = "heart";
+            h.innerHTML = heartIcons[Math.floor(Math.random() * heartIcons.length)];
+            h.style.left = Math.random() * 100 + "%";
+            h.style.animationDuration = (6 + Math.random() * 8) + "s";
+            h.style.fontSize = (15 + Math.random() * 25) + "px";
+            h.style.animationDelay = Math.random() * 6 + "s";
+            hearts.appendChild(h);
+        }
+
+        // Evasive "NO" Button & Note Logic
+        const no = document.getElementById("no");
+
+        function moveNoButton(e) {
+            if (e) e.preventDefault();
+            const btnWidth = no.offsetWidth || 100;
+            const btnHeight = no.offsetHeight || 50;
+            const maxX = window.innerWidth - btnWidth - 20;
+            const maxY = window.innerHeight - btnHeight - 20;
+
+            const x = Math.max(10, Math.random() * maxX);
+            const y = Math.max(10, Math.random() * maxY);
+
+            no.style.position = "fixed";
+            no.style.left = x + "px";
+            no.style.top = y + "px";
+            no.style.zIndex = "999";
+        }
+
+        function handleNoClick() {
+            alert("Please press YES to see what's ahead! 🥺💖");
+            moveNoButton();
+        }
+
+        no.addEventListener("mouseover", moveNoButton);
+        no.addEventListener("touchstart", moveNoButton);
+    </script>
+</body>
+</html>
