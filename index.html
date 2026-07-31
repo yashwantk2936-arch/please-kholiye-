@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+html_content = '''<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,6 +18,9 @@
             overflow-x: hidden;
             color: #fff;
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         body::before {
@@ -53,7 +56,7 @@
         }
 
         header {
-            padding: 50px 20px 20px 20px;
+            padding: 40px 20px 10px 20px;
             text-align: center;
         }
 
@@ -61,23 +64,25 @@
             font-family: 'Pacifico', cursive;
             font-size: 50px;
             color: #fff;
-            text-shadow: 0 10px 20px rgba(0,0,0,.2);
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.35), 0 2px 4px rgba(255, 105, 180, 0.4);
+            line-height: 1.2;
         }
 
         header p {
-            margin-top: 15px;
+            margin-top: 12px;
             font-size: 18px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         .photo {
             width: 200px;
             height: 200px;
-            margin: 30px auto;
+            margin: 25px auto;
             border-radius: 50%;
             overflow: hidden;
             border: 8px solid white;
             box-shadow: 0 20px 40px rgba(0,0,0,.25);
-            transition: .5s;
+            transition: transform .5s;
         }
 
         .photo:hover {
@@ -94,21 +99,21 @@
             width: 90%;
             max-width: 800px;
             margin: auto;
-            padding-bottom: 60px;
+            padding-bottom: 40px;
         }
 
         .card {
-            background: rgba(255, 255, 255, .22);
+            background: rgba(255, 255, 255, .25);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             padding: 35px;
             border-radius: 25px;
-            margin: 20px 0;
-            box-shadow: 0 15px 35px rgba(0,0,0,.15);
+            margin: 15px 0;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22), inset 0 1px 2px rgba(255, 255, 255, 0.5);
             animation: fade .8s;
             display: none;
             border: 1px solid rgba(255, 255, 255, 0.4);
-            text-shadow: 0 1px 3px rgba(0,0,0,0.15);
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
         }
 
         .card.active {
@@ -116,7 +121,7 @@
         }
 
         @keyframes fade {
-            from { opacity: 0; transform: translateY(40px); }
+            from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: none; }
         }
 
@@ -124,17 +129,30 @@
             font-size: 32px;
             font-weight: bold;
             margin-bottom: 20px;
+            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
         }
 
         .card p {
             font-size: 19px;
             line-height: 1.8;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+        }
+
+        .btn-group-final {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 25px;
+            flex-wrap: wrap;
         }
 
         button, .btn-link {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             text-decoration: none;
-            margin-top: 30px;
+            margin-top: 25px;
             padding: 15px 40px;
             border: none;
             border-radius: 50px;
@@ -143,13 +161,16 @@
             font-size: 18px;
             font-weight: 600;
             cursor: pointer;
-            transition: .3s;
-            box-shadow: 0 8px 20px rgba(255, 0, 100, .3);
+            transition: all .3s ease;
+            box-shadow: 0 10px 25px rgba(255, 0, 100, .4);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            -webkit-tap-highlight-color: transparent;
         }
 
         button:hover, .btn-link:hover {
             background: #ff1a75;
             transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255, 0, 100, .5);
         }
 
         .final {
@@ -159,37 +180,99 @@
         .final h2 {
             font-size: 42px;
             font-family: 'Pacifico', cursive;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
         }
 
         .yes {
             background: #ff2e7d;
+            margin-top: 0;
         }
 
         .no {
             background: #888;
-            margin-left: 15px;
+            margin-top: 0;
             position: relative;
             transition: left 0.2s ease, top 0.2s ease;
         }
 
         footer {
-            padding: 30px;
+            padding: 25px 20px;
             text-align: center;
             font-size: 16px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
         }
 
-        /* Mobile Responsiveness */
+        /* Fully Responsive Styles for Mobile & Small Screens */
         @media (max-width: 600px) {
-            header h1 { font-size: 38px; }
-            header p { font-size: 16px; }
-            .photo { width: 170px; height: 170px; }
-            .card { padding: 25px; }
-            .card p { font-size: 16px; }
-            .level { font-size: 26px; }
-            .final h2 { font-size: 32px; }
-            button, .btn-link { width: 100%; margin-top: 20px; text-align: center; }
-            .no { margin-left: 0; margin-top: 15px; }
+            header {
+                padding: 30px 15px 10px 15px;
+            }
+
+            header h1 {
+                font-size: 34px;
+            }
+
+            header p {
+                font-size: 15px;
+                margin-top: 8px;
+            }
+
+            .photo {
+                width: 150px;
+                height: 150px;
+                margin: 20px auto;
+                border-width: 6px;
+            }
+
+            .container {
+                width: 92%;
+                padding-bottom: 30px;
+            }
+
+            .card {
+                padding: 22px 20px;
+                border-radius: 20px;
+            }
+
+            .level {
+                font-size: 24px;
+                margin-bottom: 12px;
+            }
+
+            .card p {
+                font-size: 16px;
+                line-height: 1.6;
+            }
+
+            button, .btn-link {
+                width: 100%;
+                padding: 14px 20px;
+                font-size: 16px;
+                margin-top: 20px;
+            }
+
+            .btn-group-final {
+                flex-direction: column;
+                gap: 12px;
+                margin-top: 15px;
+            }
+
+            .btn-group-final .yes,
+            .btn-group-final .no {
+                width: 100%;
+            }
+
+            .final h2 {
+                font-size: 30px;
+                margin-bottom: 15px;
+            }
+
+            footer {
+                padding: 20px 15px;
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -201,7 +284,7 @@
         <h1>Happy Girlfriend's Day ❤️</h1>
         <p>For the most beautiful girl in my life 💕</p>
         <div class="photo">
-           <img src="https://raw.githubusercontent.com/yashwantk2936-arch/please-kholiye-/main/509277338_743385628219138_4757142804309134816_n.jpg" alt="Our Special Memory">
+            <img src="https://raw.githubusercontent.com/yashwantk2936-arch/please-kholiye-/main/509277338_743385628219138_4757142804309134816_n.jpg" alt="Our Special Memory">
         </div>
     </header>
 
@@ -220,9 +303,9 @@
             <div class="level">💗 Level 2</div>
             <p>
             I know I'm not perfect...<br>
-            Sometimes I make mistakes, sometimes I hurt you without realizing it. i never ignored you or took you granted <br>
+            Sometimes I make mistakes, sometimes I hurt you without realizing it.<br>
             But believe me...<br>
-            I never wanted to be the reason behind your sadness. mai kabhi nhi chahta tha humara relation is mud pr aa jaye 
+            I never wanted to be the reason behind your sadness.
             </p>
             <button onclick="next()">I Have More To Say 🌹</button>
         </div>
@@ -231,7 +314,7 @@
         <div class="card">
             <div class="level">🥺 Level 3</div>
             <p>
-            I'm really very sorry malkin...<br>
+            I'm really sorry...<br>
             If I made you cry, ignored your feelings, or disappointed you.<br>
             Every moment without your smile feels incomplete.
             </p>
@@ -242,7 +325,7 @@
         <div class="card">
             <div class="level">💌 Level 4</div>
             <p>
-            If I could rewind time, I'd fix every mistake.and would have learned how to build a strong relation together  aur kabhi bhi apko aise feel nhi hone deta ki mai apki value nhi krta <br>
+            If I could rewind time, I'd fix every mistake.<br>
             I'd hug you tighter, listen better, and love you even more than yesterday.
             </p>
             <button onclick="next()">Next 💖</button>
@@ -252,7 +335,7 @@
         <div class="card">
             <div class="level">🌷 Level 5</div>
             <p>
-            You deserve someone who understands you, supports you, and protects your heart.mujhe pta h mai bahut glti kiya hu pr kabhi bhi apko preshan nhi krna chahta <br>
+            You deserve someone who understands you, supports you, and protects your heart.<br>
             Every single day, I'm trying to become that person.
             </p>
             <button onclick="next()">Almost There 🌸</button>
@@ -262,8 +345,7 @@
         <div class="card">
             <div class="level">💕 Level 6</div>
             <p>
-            No matter how many fights we have...
-                malkin mai bahut gltiya kiya hu aur apke emotions ko hurt bhi kiya hu jiski wajah ap mujhe waise attached nhi h jaie pehle thi pr malkin apne ithi baar mere ko mauka diya mujhse umeed rakhi toh ek last baar aur please malkin <br>
+            No matter how many fights we have...<br>
             You're still my favorite notification, my safe place, my happiness, my forever.
             </p>
             <button onclick="next()">One Last Thing ❤️</button>
@@ -273,9 +355,9 @@
         <div class="card">
             <div class="level">💞 Level 7</div>
             <p>
-            I don't want perfection... but I can promise you my love, loyality and respect for you aur kabhi aise choti choti glti nhi kruga jise kuch khrb ho <br>
+            I don't want perfection...<br>
             I only want YOU.<br>
-           apse mere exaust nhi hui h malkin agar ap mere se prehan ho jti toh apko mere se koi umeed nhi rehti malkin Let's make more memories, laugh more, travel more, and love each other forever.<br>
+            Let's make more memories, laugh more, travel more, and love each other forever.<br>
             Happy Girlfriend's Day ❤️
             </p>
             <button onclick="next()">Final Surprise 🎁</button>
@@ -285,10 +367,10 @@
         <div class="card final">
             <h2>I Love You Forever ❤️</h2>
             <p>
-            Will you forgive me and make this Girlfriend's Day special again? please yes kr dijiye malkin aage bhi kuch h 
+            Will you forgive me and make this Girlfriend's Day special again?
             🥺💖
             </p>
-            <div style="margin-top:20px;">
+            <div class="btn-group-final">
                 <a href="https://yashwantk2936-arch.github.io/netflix/" class="btn-link yes">YES ❤️</a>
                 <button class="no" id="no" onclick="handleNoClick()">NO 😤</button>
             </div>
@@ -315,13 +397,13 @@
         const hearts = document.querySelector(".hearts");
         const heartIcons = ["💖", "💕", "💗", "🌸", "💝", "❤️"];
 
-        for (let i = 0; i < 45; i++) {
+        for (let i = 0; i < 35; i++) {
             const h = document.createElement("div");
             h.className = "heart";
             h.innerHTML = heartIcons[Math.floor(Math.random() * heartIcons.length)];
             h.style.left = Math.random() * 100 + "%";
             h.style.animationDuration = (6 + Math.random() * 8) + "s";
-            h.style.fontSize = (15 + Math.random() * 25) + "px";
+            h.style.fontSize = (14 + Math.random() * 20) + "px";
             h.style.animationDelay = Math.random() * 6 + "s";
             hearts.appendChild(h);
         }
@@ -351,7 +433,13 @@
         }
 
         no.addEventListener("mouseover", moveNoButton);
-        no.addEventListener("touchstart", moveNoButton);
+        no.addEventListener("touchstart", moveNoButton, { passive: false });
     </script>
 </body>
 </html>
+'''
+
+with open('index.html', 'w', encoding='utf-8') as f:
+    f.write(html_content)
+
+print("Updated HTML generated with text and card background shadows.")
